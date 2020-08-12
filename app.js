@@ -23,6 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {   name: 'gplay',
             img: 'images/gplay.png'
+        },
+        {   name: 'adobe',
+            img: 'images/Adobe.png'
+        },
+        {   name: 'amazon',
+            img: 'images/amazon.png'
+        },
+        {   name: 'apple',
+            img: 'images/apple.png'
+        },
+        {   name: 'chrome',
+            img: 'images/chrome.png'
+        },
+        {   name: 'hamburger',
+            img: 'images/hamburger.png'
+        },
+        {   name: 'gmail',
+            img: 'images/gmail.png'
+        },
+        {   name: 'steam',
+            img: 'images/steam.png'
+        },
+        {   name: 'gplay',
+            img: 'images/gplay.png'
         }
         
         
@@ -56,7 +80,11 @@ function createBoard(){
         if(cardsChosen[0] === cardsChosen[1]){
             alert('You found a match')
             cards[optionOneId].setAttribute('src', 'images/blank.png')
+            cards[optionOneId].disabled = true
             cards[optionTwoId].setAttribute('src', 'images/blank.png')
+            cards[optionTwoId].disabled = true
+
+
             cardsWon.push(cardsChosen)
         } else {
             cards[optionOneId].setAttribute('src', 'images/watermelon.png')
@@ -67,7 +95,7 @@ function createBoard(){
         cardsChosen = []
         cardsChosenId = []
         resultDisplay.textContent = cardsWon.length
-        if(cardsWon.length === cardsArray.length/2) {
+        if(cardsWon.length === cardArray.length/2) {
             resultDisplay.textContent = "Congratulations you won!"
         }
 
