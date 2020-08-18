@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {   name: 'gplay',
             img: 'images/gplay.png'
         }
-        
-        
+
+
     ]
 
 cardArray.sort(() => 0.5 - Math.random())
@@ -80,9 +80,9 @@ function createBoard(){
         if(cardsChosen[0] === cardsChosen[1]){
             alert('You found a match')
             cards[optionOneId].setAttribute('src', 'images/blank.png')
-            cards[optionOneId].disabled = true
+            cards[optionOneId].removeEventListener('click', flipcard)
             cards[optionTwoId].setAttribute('src', 'images/blank.png')
-            cards[optionTwoId].disabled = true
+            cards[optionTwoId].removeEventListener('click',flipcard)
 
 
             cardsWon.push(cardsChosen)
@@ -101,7 +101,7 @@ function createBoard(){
 
 
 
-    
+
 
 }
 
